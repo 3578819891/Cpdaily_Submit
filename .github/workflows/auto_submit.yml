@@ -10,9 +10,9 @@ on:
    pull_request:
 #     branches:
 #       - main
-     schedule:
+   schedule:
 #     # 每天北京时间8点执行，第二个0代表小时，以此类推，如：9点——'0 1 * * *''
-     - cron: '0 0,3,5,10 0 * * *'
+     - cron: ' 0 0 * * *'
 
 jobs:
    submit_user1:
@@ -42,26 +42,26 @@ jobs:
         python -m pip install -r requirements.txt
 
     - name: Run code 
-             env:
+    env:
          # 模拟登录api地址
         login_api: ${{ secrets.login_api }}
         # 配置个人信息
         username: ${{ secrets.username }}
-         password: ${{ secrets.password }}
-         address: ${{ secrets.address }}
-         school: ${{ secrets.school }}
+        password: ${{ secrets.password }}
+        address: ${{ secrets.address }}
+        school: ${{ secrets.school }}
          # 配置推送信息
          # smtp 配置
-         smtp_from: ${{ secrets.smtp_from }}
+        smtp_from: ${{ secrets.smtp_from }}
         smtp_pass: ${{ secrets.smtp_pass }}
        # mail
-         email: ${{ secrets.email }}
+        email: ${{ secrets.email }}
         # ServerChan
-         sckey: ${{ secrets.sckey }}
+        sckey: ${{ secrets.sckey }}
         # 使用的config.yml
         config: ${{secrets.config}}
 
-       run: |
+        run: |
          python ./index.py $config
 
 
