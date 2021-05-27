@@ -9,18 +9,17 @@ users:
   #单个用户配置
   - user:
       #username 学号或者工号
-      username: ''
+      username: '2001300116'
       #password 密码
-      password: ''
+      password: 'ahsxdy@12345'
       #address 地址，定位信息
-      address: addrexx
+      address: 安徽省合肥市肥东县
       #email 接受通知消息的邮箱
-      email: email@qq.com
+      email: 3578819891@qq.com
       #school 学校全称
-      school: school
-      lon: ''
-      lat: ''
-      photo: './photo.jpg'
+      school: 安徽水利水电职业技术学院
+      lon: '117.436555'
+      lat: '31.828914'
       abnormalReason: ''
 
 
@@ -30,43 +29,91 @@ cpdaily:
   defaults:
     - default:
         #表单项标题
-        title: 今天你的所在地是？
+        title: 你的学生类别
         #表单项类型，对应今日校园接口返回的fieldType字段，1代表文本，2代表单选，3代表多选，4代表图片
-        type: 1
-        #表单项默认值, 三级选项选择用 '/' 分隔
-        value: 福建省/福州市/仓山区
-    - default:
-        title: 今天你的体温是多少？
         type: 2
-        value: 37.2℃及以下
+        #表单项默认值, 三级选项选择用 '/' 分隔
+        value: 专科生
     - default:
-        title: 今天你的身体状况是？
+        title: 你的生源地
+        type: 2
+        value: 内地
+    - default:
+        title: 你的健康状态
         type: 2
         value: 健康
     - default:
-        title: 近14天你或你的共同居住人是否有疫情中、高风险区域人员接触史？
+        title: 你是否有发热、感冒、咳嗽、呼吸困难等症状
+        type: 2
+        value: 无
+    - default:
+        title: 你是否因感染新冠肺炎就诊或住院
+        type: 2
+        value: 
+    - default:
+        title: 如果就诊或住院，请填写你去的医院名称（未就诊、住院的不填）
+        type: 1
+        value: 
+    - default:
+        title: 你当前是否被隔离
         type: 2
         value: 否
     - default:
-        title: 近14天你或你的共同居住人是否和确诊、疑似病人接触过？
+        title: 如果被隔离，请选择你的隔离方式（未被隔离的不填）
+        type: 2
+        value: 
+    - default:
+        title: 如果被隔离，请填写目前被隔离的地址（未被隔离的不填）
+        type: 1
+        value: 
+    - default:
+        title: 春节期间，你是否在校    
         type: 2
         value: 否
     - default:
-        title: 近14天你或你的共同居住人是否是确诊、疑似病例？
-        type: 2
-        value: 否
-    - default:
-        title: 你或你的共同居住人目前是否被医学隔离？
-        type: 2
-        value: 否
-    - default:
-        title: 今天你当地的健康码颜色是？
-        type: 2
-        value: 绿色
-    - default:
-        title: 本人是否承诺以上所填报的全部内容均属实、准确，不存在任何隐瞒与不实的情况，更无遗漏之处    
+        title: 你目前是否在校
         type: 2
         value: 是
+    - default:
+        title: 你目前所在城市
+        type: 1
+        value: 安徽省/合肥市/肥东县
+    - default:
+        title: 你是否已返回 或 从未离开学校所在的城市
+        type: 2
+        value: 是
+    - default:
+        title: 你是否确定返回学校的时间
+        type: 2
+        value: 否
+    - default:
+        title: 如果已确定，请选择你的返回时间
+        type: 1
+        value: 
+    - default:
+        title: 近1个月，你是否去过湖北或接触过湖北地区的人员
+        type: 2
+        value: 否
+    - default:
+        title: 近1个月，你是否接触过确诊感染新冠病毒的人员
+        type: 2
+        value: 否
+    - default:
+        title: 近1个月，你是否接触过疑似感染新冠病毒的人员
+        type: 2
+        value: 否
+    - default:
+        title: 如果有密切接触，请选择和你密切接触（疑似/确诊/湖北）人员的关系（没有接触的不填）
+        type: 2
+        value: 
+    - default:
+        title: 过去14天，是否有你的共同居住者（家属或者合租者）从其他城市返回情况
+        type: 2
+        value: 否
+    - default:
+        title: 如果有，请选择共同居住者返回城市（没有从其他城市返回的不填）
+        type: 1
+        value: 
 
 
 SMTP:
