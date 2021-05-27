@@ -4,15 +4,18 @@
 # name: Python application
 
 on:
-push:
+   push:
      branches:
       - main
+   pull_request:
+#     branches:
+#       - main
      schedule:
 #     # 每天北京时间8点执行，第二个0代表小时，以此类推，如：9点——'0 1 * * *''
      - cron: '0 0,3,5,10 0 * * *'
 
 jobs:
-submit_user1:
+   submit_user1:
 
     runs-on: ubuntu-latest
     environment: CodePaces # 此处填入环境名
@@ -29,17 +32,17 @@ submit_user1:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.6
-       uses: actions/setup-python@v2
+      uses: actions/setup-python@v2
       with:
          python-version: 3.6
 
-     - name: Install dependencies
+    - name: Install dependencies
       run: | 
         python -m pip install --upgrade pip
         python -m pip install -r requirements.txt
 
-- name: Run code 
-       env:
+    - name: Run code 
+             env:
          # 模拟登录api地址
         login_api: ${{ secrets.login_api }}
         # 配置个人信息
